@@ -19,7 +19,6 @@
     margin-top: 5px;
     gap: 10px;
 }
-
 .LaptopuList li {
     list-style: none;
     font-weight: 600;
@@ -27,7 +26,6 @@
     border-radius: 5px;
 
 }
-
 .LaptopuList li:hover {
     border-radius: 5px;
     background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
@@ -133,7 +131,9 @@
     }
 }
 
-/* about  */
+
+
+/* About  */
 .sectionTitle {
     position: relative;
 }
