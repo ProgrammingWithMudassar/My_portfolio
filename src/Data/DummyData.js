@@ -79,12 +79,12 @@ export const ServiceData = [
 ]
 
 export const projectData = [
-    { img: `${Project1}` },
-    { img: `${Project2}` },
-    { img: `${Project3}` },
-    { img: `${Project4}` },
-    { img: `${Project5}` },
-    { img: `${Project6}` },
+    { img: `${Project1}`,y:-100 },
+    { img: `${Project2}`,y:-100 },
+    { img: `${Project3}`,y:-100 },
+    { img: `${Project4}`,y:100 },
+    { img: `${Project5}`,y:100 },
+    { img: `${Project6}`,y:100 },
 
 ]
 

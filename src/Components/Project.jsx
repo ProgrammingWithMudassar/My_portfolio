@@ -4,6 +4,10 @@ import {
 } from '@mui/material'
 import './Styles.css'
 import { projectData } from '../Data/DummyData'
+import { motion } from "framer-motion";
+
+
+
 
 const Project = () => {
   return (
@@ -17,8 +21,19 @@ const Project = () => {
             projectData.map((data) => {
               return (
                 <Grid item xs={12} sm={6} md={4} >
-                  <div className='ProjectImgBox'>
-                    <img src={data.img} alt="" className='ProjectImg' />
+                  <div className='ProjectImgBox' >
+                    <motion.div
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false, amount: 0.5 }}
+                      transition={{ duration: 0.6 }}
+                      variants={{
+                        hidden: { opacity: 0, y: data.y },
+                        visible: { opacity: 1, y: 0 }
+                      }}
+                    >
+                      <img src={data.img} alt="" className='ProjectImg' />
+                    </motion.div>
                   </div>
                 </Grid>
               )
@@ -26,7 +41,7 @@ const Project = () => {
           }
         </Grid>
       </Container>
-    </Box>
+    </Box >
   )
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import "./Styles.css"
 import { Container, Box, Grid, Typography, Stack, Button } from '@mui/material'
 import emailjs from '@emailjs/browser';
-
+import { motion } from 'framer-motion';
 
 const Contact = () => {
 
@@ -27,7 +27,7 @@ const Contact = () => {
     e.preventDefault();
     let { name, email, subject, message } = mail;
 
-    if (!name || !email || !subject || !message ) {
+    if (!name || !email || !subject || !message) {
       alert("please fill completely contact form");
     }
     else {
@@ -56,10 +56,54 @@ const Contact = () => {
             </Box>
             <form ref={form} onSubmit={sendEmail}>
               <Stack direction="column" spacing={2} mt={4}>
-                <input type="text" placeholder='Name' className='input' value={mail.name} name="name" onChange={handleInput} />
-                <input type="email" placeholder='Email' className='input' value={mail.email} name="email" onChange={handleInput} />
-                <input type="text" placeholder='Subject' className='input' value={mail.subject} name="subject" onChange={handleInput} />
-                <textarea placeholder='Message' cols="30" rows="10" className='textInput' value={mail.message} name="message" onChange={handleInput} />
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.5 }}
+                  transition={{ duration: 0.8 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 100 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                >
+                  <input type="text" placeholder='Name' className='input' value={mail.name} name="name" onChange={handleInput} />
+                </motion.div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.5 }}
+                  transition={{ duration: 0.6 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 100 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                >
+                  <input type="email" placeholder='Email' className='input' value={mail.email} name="email" onChange={handleInput} />
+                </motion.div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.5 }}
+                  transition={{ duration: 0.4 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 100 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                >
+                  <input type="text" placeholder='Subject' className='input' value={mail.subject} name="subject" onChange={handleInput} />
+                </motion.div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.5 }}
+                  transition={{ duration: 0.2 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 100 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                >
+                  <textarea placeholder='Message' cols="30" rows="10" className='textInput' value={mail.message} name="message" onChange={handleInput} />
+                </motion.div>
                 <Button style={{ borderRadius: '20px', height: "40px" }} onClick={sendEmail}>Send me</Button>
               </Stack>
             </form>
