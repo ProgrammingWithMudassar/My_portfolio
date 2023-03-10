@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
     return (
-        <Box color='#ffffff' sx={{ mt: { xs: 10, md: 10 } }} id="about">
+        <Box color='#ffffff' sx={{ mt: { xs: 10, md: 10 },overflow:'hidden' }} id="about">
             <Container >
                 <Box className="sectionTitle" >
                     <Typography variant="h4" className='title name' fontWeight={600}>About Me</Typography>
@@ -18,7 +18,7 @@ const About = () => {
                         <motion.div
                           initial="hidden"
                           whileInView="visible"
-                          viewport={{ once:false, amount: 0.5 }}
+                          viewport={{ once:true, amount: 0.5 }}
                           transition={{ duration:0.8 }}
                           variants={{
                             hidden:{ opacity: 0, x:-100 },
@@ -34,7 +34,7 @@ const About = () => {
                     <motion.div
                           initial="hidden"
                           whileInView="visible"
-                          viewport={{ once:false, amount: 0.5 }}
+                          viewport={{ once:true, amount: 0.5 }}
                           transition={{ duration:0.8 }}
                           variants={{
                             hidden:{ opacity: 0, x: 100 },
@@ -74,14 +74,6 @@ const About = () => {
                 </motion.div>
                     </Grid>
                 </Grid>
-                {/* <Grid container spacing={4} sx={{ mt: { xs: 4, md: 6 } }}>
-                    <Grid item xs={12} md={6}>
-                    <Edu />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                    sdfgsdf
-                    </Grid>
-                </Grid> */}
             </Container >
         </Box >
     )

@@ -31,7 +31,7 @@ const Experience = () => {
                                             <motion.div
                                                 initial="hidden"
                                                 whileInView="visible"
-                                                viewport={{ once: false, amount: 0.5 }}
+                                                viewport={{ once: true, amount: 0.5 }}
                                                 transition={{ duration: data.d }}
                                                 variants={{
                                                     hidden: { opacity: 0, x: data.x },

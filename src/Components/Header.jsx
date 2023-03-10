@@ -29,7 +29,7 @@ const Header = () => {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.6 }}
                 variants={{
                   hidden: { opacity: 0, x: -100 },
@@ -56,7 +56,7 @@ const Header = () => {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1 }}
                 variants={{
                   hidden: { opacity: 0, x: -150 },
@@ -81,7 +81,7 @@ const Header = () => {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 1.4 }}
                 variants={{
                   hidden: { opacity: 0, x: -150 },
@@ -97,20 +97,10 @@ const Header = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.5 }}
-              transition={{ duration: 1 }}
-              variants={{
-                hidden: { opacity: 0, x: 150 },
-                visible: { opacity: 1, x: 0 }
-              }}
-            >
+           
               <Box className="image" >
                 <img src={Profile} alt="" width={400} className="profileImg" />
               </Box>
-            </motion.div>
           </Grid>
         </Grid>
       </Container>
