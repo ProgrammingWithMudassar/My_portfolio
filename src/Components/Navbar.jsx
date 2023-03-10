@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { HashLink as Link } from 'react-router-hash-link'
 import { BrowserRouter } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -20,21 +21,41 @@ const Navbar = () => {
                 {/* Laptop Navbar */}
                 <Box className='PC'>
                     <Box>
-                        <Typography variant="h6" fontWeight={600} className="name">MY_Portfolio</Typography>
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.5 }}
+                            transition={{ duration: 0.6 }}
+                            variants={{
+                                hidden: { opacity: 0, x: -100 },
+                                visible: { opacity: 1, x: 0 }
+                            }} >
+                            <Typography variant="h6" fontWeight={600} className="name">MY_Portfolio</Typography>
+                        </motion.div>
                     </Box>
                     <BrowserRouter >
-                        <Box display='flex' alignContent='center'>
-                            <ul className='LaptopuList'>
-                                <li><Link to="#/" style={{ color: "#ffffff" }}> Home </Link></li>
-                                <li><Link to="#about" style={{ color: "#ffffff" }}> About </Link></li>
-                                <li><Link to="#experience" style={{ color: "#ffffff" }}> Experience </Link></li>
-                                <li><Link to="#service" style={{ color: "#ffffff" }}> Service </Link></li>
-                                <li><Link to="#projects" style={{ color: "#ffffff" }}> Projects </Link></li>
-                            </ul>
-                            <Link to='#ContactMe'>
-                                <Button color='myColor' sx={{ ml: 4, px: 3 }}>Contect Me</Button>
-                            </Link>
-                        </Box>
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.5 }}
+                            transition={{ duration: 0.6 }}
+                            variants={{
+                                hidden: { opacity: 0, x: 100 },
+                                visible: { opacity: 1, x: 0 }
+                            }} >
+                            <Box display='flex' alignContent='center'>
+                                <ul className='LaptopuList'>
+                                    <li><Link to="#/" style={{ color: "#ffffff" }}> Home </Link></li>
+                                    <li><Link to="#about" style={{ color: "#ffffff" }}> About </Link></li>
+                                    <li><Link to="#experience" style={{ color: "#ffffff" }}> Experience </Link></li>
+                                    <li><Link to="#service" style={{ color: "#ffffff" }}> Service </Link></li>
+                                    <li><Link to="#projects" style={{ color: "#ffffff" }}> Projects </Link></li>
+                                </ul>
+                                <Link to='#ContactMe'>
+                                    <Button color='myColor' sx={{ ml: 4, px: 3 }}>Contect Me</Button>
+                                </Link>
+                            </Box>
+                        </motion.div>
                     </BrowserRouter>
                 </Box>
                 <Divider sx={{ mt: 2 }} color="#9698A9" className='divider' />
