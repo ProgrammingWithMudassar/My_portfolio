@@ -45,11 +45,9 @@
     .PC {
         display: none;
     }
-
     .divider {
         display: none;
     }
-
     .mobile {
         display: block;
         display: flex;
