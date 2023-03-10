@@ -48,24 +48,28 @@ export const DetailData = [
 
 export const ServiceData = [
     {
+        x:-100,
         mt: "0px",
         icon: LaptopMacIcon,
         title: 'Website Development',
         desc: 'I develope complete website for you with latest front-end and back-end technologies. Store your data in best manageable database. Where uploading, editing and getting data will very fast and easy . '
     },
     {
+        x:100,
         mt: "100px",
         icon: ColorLensIcon,
         title: 'Website Designing',
         desc: 'Get best visual layout and user interface of a website, including its appearance, navigation, responsive design, eye checking colors, animations and overall user experience.'
     },
     {
+        x:-100,
         mt: "0px",
         icon: MobileFriendlyIcon,
         title: 'Web App Development',
         desc: 'Get web-based applications with a dynamic and interactive experience that is similar to native applications. This will save your time and you get more fast responce.'
     },
     {
+        x:100,
         mt: "100px",
         icon: ViewQuiltIcon,
         title: 'UI/UX Designing',
@@ -86,21 +90,29 @@ export const projectData = [
 
 export const ExperienceDate = [
     {
+        d:0.4,
+        x:100,
         title: "Supervisor's Tech-hub",
         duration: '( 6 Months )',
         desc: 'Supervisor have a good team of developer. I done more than 8 projects in that time.'
     },
     {
+        d:0.7,
+        x:-100,
         title: "Alright Tech-hub",
         duration: '( 7 Months )',
         desc: 'Alright give me opportunity to work with them. That was my one of best coding experience because i learn lot of thing from there.'
     },
     {
+        d:1,
+        x:100,
         title: "MZ Code Lab",
         duration: '( 1 Year )',
         desc: 'This is the company from where i started my coding journey. I learn from seniors in from that company.'
     },
     {
+        d:1.4,
+        x:-100,
         title: "MTech-Hub",
         duration: '( 6 month Internship )',
         desc: 'I started my coding from this company. Developer are working ther very help they was always tell me very thing without any hesitation.'

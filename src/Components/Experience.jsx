@@ -8,6 +8,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import { Box, Card, Stack, Typography, Container } from '@mui/material';
 import './Styles.css'
 import { ExperienceDate } from '../Data/DummyData.js'
+import { motion } from 'framer-motion';
 
 const Experience = () => {
     return (
@@ -27,11 +28,22 @@ const Experience = () => {
                                             <TimelineConnector />
                                         </TimelineSeparator>
                                         <TimelineContent>
-                                            <Stack direction='column'>
-                                                <Typography variant="h5" fontWeight={600} sx={{fontSize:{xs:'17px'}}}>{data.title}</Typography>
-                                                <Typography variant="body2" >{data.duration}</Typography>
-                                                <Typography variant="body1" mt={2} sx={{fontSize:{xs:'13px'}}}>{data.desc}</Typography>
-                                            </Stack>
+                                            <motion.div
+                                                initial="hidden"
+                                                whileInView="visible"
+                                                viewport={{ once: false, amount: 0.5 }}
+                                                transition={{ duration: data.d }}
+                                                variants={{
+                                                    hidden: { opacity: 0, x: data.x },
+                                                    visible: { opacity: 1, x: 0 }
+                                                }}
+                                            >
+                                                <Stack direction='column'>
+                                                    <Typography variant="h5" fontWeight={600} sx={{ fontSize: { xs: '17px' } }}>{data.title}</Typography>
+                                                    <Typography variant="body2" >{data.duration}</Typography>
+                                                    <Typography variant="body1" mt={2} sx={{ fontSize: { xs: '13px' } }}>{data.desc}</Typography>
+                                                </Stack>
+                                            </motion.div>
                                         </TimelineContent>
                                     </TimelineItem>
                                 )
